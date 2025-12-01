@@ -1,8 +1,42 @@
-import KaistLogo from "@/components/KaistLogo";
+import MemberCard from "@/components/MemberCard";
+import MouseFollower from "@/components/MouseFollower";
+
+const members = [
+  {
+    department: "전산학부",
+    frameworks: ["React", "React Native", "Spring Boot"],
+    languages: ["TypeScript", "JavaScript", "Java"],
+    databases: ["PostgreSQL", "Redis", "SQLite", "MySQL"],
+    etc: ["Figma"],
+    experience: "3+ 년 경력",
+    memberNumber: 1,
+  },
+  {
+    department: "전산학부",
+    frameworks: ["React", "React Native", "Spring Boot"],
+    languages: ["TypeScript", "JavaScript", "Java"],
+    databases: ["PostgreSQL", "Redis", "SQLite", "MySQL"],
+    etc: ["TailwindCSS", "MaterialUI"],
+    experience: "3+ 년 경력",
+    memberNumber: 2,
+  },
+  {
+    department: "전기및전자공학부",
+    frameworks: ["FastAPI", "Django", "Flask", "Qt"],
+    languages: ["C/C++", "Python"],
+    databases: ["Redis", "SQLite"],
+    etc: ["Firmware (Arduino, Atmega)"],
+    experience: "3+ 년 경력",
+    memberNumber: 3,
+  },
+];
 
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 transition-colors duration-500 dark:from-black dark:via-zinc-950 dark:to-black">
+      {/* Mouse follower effect */}
+      <MouseFollower />
+
       {/* Animated background gradient orbs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="animate-pulse-glow absolute -left-40 -top-40 h-96 w-96 rounded-full bg-gradient-to-r from-amber-200 to-orange-200 opacity-60 blur-3xl dark:from-violet-600 dark:to-indigo-600 dark:opacity-40" />
@@ -34,43 +68,115 @@ export default function Home() {
           {/* Hero section */}
           <div className="animate-fade-in-up flex flex-col items-center gap-6 pt-12 text-center">
             <div className="relative">
-              <h1 className="animate-gradient bg-gradient-to-r from-amber-600 via-rose-500 to-violet-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent dark:from-violet-400 dark:via-cyan-400 dark:to-fuchsia-400 sm:text-7xl">
+              <h1 className="animate-gradient bg-gradient-to-r from-amber-600 via-rose-500 to-violet-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-violet-400 dark:via-cyan-400 dark:to-fuchsia-400 sm:text-5xl">
                 오리연못 미꾸라지
               </h1>
               <div className="absolute inset-0 -z-10 blur-2xl">
-                <h1 className="animate-gradient bg-gradient-to-r from-amber-600 via-rose-500 to-violet-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent opacity-40 dark:from-violet-400 dark:via-cyan-400 dark:to-fuchsia-400 dark:opacity-50 sm:text-7xl">
+                <h1 className="animate-gradient bg-gradient-to-r from-amber-600 via-rose-500 to-violet-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent opacity-40 dark:from-violet-400 dark:via-cyan-400 dark:to-fuchsia-400 dark:opacity-50 sm:text-5xl">
                   오리연못 미꾸라지
                 </h1>
               </div>
             </div>
 
-            {/* KAIST Badge - Prominent Display */}
-            <div className="glass flex flex-col items-center gap-4 rounded-2xl px-8 py-6 shadow-xl shadow-amber-500/10 dark:shadow-violet-500/10 sm:px-12">
-              <KaistLogo className="h-12 w-auto sm:h-16" />
-              <div className="flex items-center gap-3">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-                <span className="text-base font-semibold text-amber-800 dark:text-zinc-200 sm:text-lg">
-                  전산학부 · 전기전자공학부 졸업
-                </span>
-              </div>
-            </div>
-
-            <p className="max-w-lg text-lg leading-relaxed text-amber-900/70 dark:text-zinc-400">
-              카이스트 출신 개발자 3인이 모여 만든 웹 개발 팀입니다.
+            <p className="max-w-xl text-center text-lg leading-relaxed text-amber-900/70 dark:text-zinc-400">
+              <span className="font-bold text-amber-900 dark:text-zinc-100">
+                카이스트 출신 개발자 3인
+              </span>
+              이 모여 만든 웹 개발 팀입니다.
               <br />
-              <span className="font-medium text-amber-900 dark:text-zinc-300">
+              <span className="font-bold text-amber-900 dark:text-zinc-100">
                 창의적인 디자인
               </span>
               과{" "}
-              <span className="font-medium text-amber-900 dark:text-zinc-300">
+              <span className="font-bold text-amber-900 dark:text-zinc-100">
                 최신 기술
               </span>
-              로 여러분의 비전을 현실로 만들어 드립니다.
+              로
+              <br />
+              여러분의{" "}
+              <span className="font-bold text-amber-900 dark:text-zinc-100">
+                비전
+              </span>
+              을{" "}
+              <span className="font-bold text-amber-900 dark:text-zinc-100">
+                현실
+              </span>
+              로 만들어 드립니다.
             </p>
           </div>
 
-          {/* 우리는 다릅니다 Section */}
+          {/* 서비스 종류 Section */}
           <section className="animate-fade-in-up animation-delay-200 flex w-full flex-col items-center gap-8 opacity-0">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">🛠️</span>
+              <h2 className="text-3xl font-bold text-amber-900 dark:text-zinc-100">
+                서비스 종류
+              </h2>
+            </div>
+
+            <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                {
+                  label: "웹 기획",
+                  icon: "💡",
+                  color: "from-amber-500 to-orange-500",
+                  bg: "bg-amber-100 dark:bg-amber-900/30",
+                  border: "border-amber-200 dark:border-amber-800",
+                },
+                {
+                  label: "웹 개발",
+                  subLabel: "풀 스택",
+                  icon: "💻",
+                  color: "from-violet-500 to-purple-500",
+                  bg: "bg-violet-100 dark:bg-violet-900/30",
+                  border: "border-violet-200 dark:border-violet-800",
+                },
+                {
+                  label: "서비스 배포",
+                  icon: "🚀",
+                  color: "from-cyan-500 to-blue-500",
+                  bg: "bg-cyan-100 dark:bg-cyan-900/30",
+                  border: "border-cyan-200 dark:border-cyan-800",
+                },
+                {
+                  label: "서비스 운영",
+                  icon: "⚙️",
+                  color: "from-emerald-500 to-teal-500",
+                  bg: "bg-emerald-100 dark:bg-emerald-900/30",
+                  border: "border-emerald-200 dark:border-emerald-800",
+                },
+                {
+                  label: "서비스 리뉴얼",
+                  icon: "✨",
+                  color: "from-rose-500 to-pink-500",
+                  bg: "bg-rose-100 dark:bg-rose-900/30",
+                  border: "border-rose-200 dark:border-rose-800",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className={`glass group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 ${item.border} px-4 py-6 text-center transition-all duration-300 hover:scale-105`}
+                >
+                  <span className="text-4xl transition-transform duration-300 group-hover:scale-110">
+                    {item.icon}
+                  </span>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-base font-bold text-amber-900 dark:text-zinc-100">
+                      {item.label}
+                    </span>
+                    {item.subLabel && (
+                      <span className="text-xs font-medium text-amber-700 dark:text-zinc-400">
+                        ({item.subLabel})
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 우리는 다릅니다 Section */}
+          <section className="animate-fade-in-up animation-delay-300 flex w-full flex-col items-center gap-8 opacity-0">
             <div className="flex items-center gap-3">
               <span className="text-3xl">✅</span>
               <h2 className="text-3xl font-bold text-amber-900 dark:text-zinc-100">
@@ -96,7 +202,7 @@ export default function Home() {
 
               <div className="flex flex-col gap-4 text-amber-900/80 dark:text-zinc-300">
                 <p className="text-lg">
-                  저렴하다고 퀄리티가 낮아지는 게 아닙니다.
+                  가장 합리적인 가격으로,
                 </p>
                 <div className="flex flex-col gap-2 text-lg">
                   <p>
@@ -117,20 +223,36 @@ export default function Home() {
             </div>
           </section>
 
-          {/* 왜 React / Next.js 인가? Section */}
+          {/* 팀 멤버 소개 Section */}
           <section className="animate-fade-in-up animation-delay-400 flex w-full flex-col items-center gap-8 opacity-0">
             <div className="flex items-center gap-3">
-              <span className="text-3xl">💡</span>
+              <span className="text-3xl">👥</span>
               <h2 className="text-3xl font-bold text-amber-900 dark:text-zinc-100">
-                왜 React / Next.js 인가?
+                팀 멤버 소개
               </h2>
             </div>
 
             <p className="text-center text-lg text-amber-800 dark:text-zinc-300">
-              현대적인 웹 페이지의 사실상 유일한 스택입니다.
+              각자의 전문 분야에서 3년 이상의 경력을 쌓은 개발자들입니다.
             </p>
 
-            <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {members.map((member) => (
+                <MemberCard key={member.memberNumber} {...member} />
+              ))}
+            </div>
+          </section>
+
+          {/* 우리가 제공하는 웹 Section */}
+          <section className="animate-fade-in-up animation-delay-600 flex w-full flex-col items-center gap-8 opacity-0">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">🌐</span>
+              <h2 className="text-3xl font-bold text-amber-900 dark:text-zinc-100">
+                우리가 제공하는 웹
+              </h2>
+            </div>
+
+            <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-6">
               {[
                 {
                   label: "반응형 웹",
@@ -153,7 +275,7 @@ export default function Home() {
                   bg: "bg-cyan-100 dark:bg-cyan-900/30",
                 },
                 {
-                  label: "빠른 개발",
+                  label: "빠른 로딩",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
@@ -173,14 +295,24 @@ export default function Home() {
                   bg: "bg-emerald-100 dark:bg-emerald-900/30",
                 },
                 {
-                  label: "유지보수 용이",
+                  label: "인터랙티브 UI",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
                     </svg>
                   ),
                   color: "text-rose-500 dark:text-rose-400",
                   bg: "bg-rose-100 dark:bg-rose-900/30",
+                },
+                {
+                  label: "100% 코드 제공",
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+                    </svg>
+                  ),
+                  color: "text-indigo-500 dark:text-indigo-400",
+                  bg: "bg-indigo-100 dark:bg-indigo-900/30",
                 },
               ].map((item) => (
                 <div
@@ -196,96 +328,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            <div className="glass mt-4 flex flex-col items-center gap-4 rounded-2xl p-6 text-center sm:p-8">
-              <p className="text-lg font-semibold text-amber-900 dark:text-zinc-200">
-                2024년 기준 전 세계 웹사이트 트렌드의 중심.
-              </p>
-              <div className="flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2 dark:bg-rose-900/30">
-                <span className="text-rose-600 dark:text-rose-400">⚠️</span>
-                <p className="text-rose-700 dark:text-rose-300">
-                  워드프레스는 2003년 기술입니다.{" "}
-                  <span className="font-bold">(22년 전)</span>
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* 유지보수 비용 Section */}
-          <section className="animate-fade-in-up animation-delay-600 flex w-full flex-col items-center gap-8 opacity-0">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">👨‍💻</span>
-              <h2 className="text-3xl font-bold text-amber-900 dark:text-zinc-100">
-                유지보수 비용이 줄어듭니다!
-              </h2>
-            </div>
-
-            <p className="text-center text-lg font-semibold text-amber-800 dark:text-zinc-300">
-              신입 개발자 = 유지보수 인력
-            </p>
-
-            <div className="grid w-full gap-6 md:grid-cols-2">
-              {/* 2024년 신입 개발자들이 배우는 기술 */}
-              <div className="glass flex flex-col gap-4 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
-                  2024년 신입 개발자들이 배우는 기술
-                </h3>
-                <div className="flex flex-col gap-2">
-                  {["React / Next.js", "TypeScript", "Tailwind CSS"].map(
-                    (tech) => (
-                      <div key={tech} className="flex items-center gap-2">
-                        <span className="text-emerald-500">✅</span>
-                        <span className="font-medium text-amber-900 dark:text-zinc-200">
-                          {tech}
-                        </span>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-
-              {/* 2024년 신입 개발자들이 안 배우는 기술 */}
-              <div className="glass flex flex-col gap-4 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-rose-600 dark:text-rose-400">
-                  2024년 신입 개발자들이 안 배우는 기술
-                </h3>
-                <div className="flex flex-col gap-2">
-                  {["PHP (워드프레스)", "아임웹 자체 빌더"].map((tech) => (
-                    <div key={tech} className="flex items-center gap-2">
-                      <span className="text-rose-500">❌</span>
-                      <span className="font-medium text-amber-900/70 dark:text-zinc-400">
-                        {tech}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="glass mt-4 flex flex-col items-center gap-4 rounded-2xl p-6 text-center sm:p-8">
-              <p className="text-lg font-semibold text-amber-900 dark:text-zinc-200">
-                &quot;나중에 다른 개발자한테 맡기려면?&quot;
-              </p>
-              <div className="flex flex-col gap-2 text-amber-800 dark:text-zinc-300">
-                <p>
-                  → React 개발자는{" "}
-                  <span className="font-bold text-emerald-600 dark:text-emerald-400">
-                    넘쳐납니다.
-                  </span>
-                </p>
-                <p>
-                  → 워드프레스 전문가 찾기?{" "}
-                  <span className="font-bold text-rose-600 dark:text-rose-400">
-                    점점 어려워집니다.
-                  </span>
-                </p>
-              </div>
-              <div className="mt-4 rounded-full bg-gradient-to-r from-amber-100 to-emerald-100 px-6 py-3 dark:from-emerald-900/30 dark:to-cyan-900/30">
-                <p className="font-bold text-amber-900 dark:text-emerald-300">
-                  트렌디한 기술 = 인력 수급 용이 = 유지보수 비용 절감
-                </p>
-              </div>
-            </div>
           </section>
 
           {/* Demo section */}
@@ -297,6 +339,10 @@ export default function Home() {
               </h2>
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-amber-300 dark:to-zinc-700" />
             </div>
+
+            <p className="text-center text-lg text-amber-800 dark:text-zinc-300">
+              저희 팀이 제작한 데모 웹 사이트를 자유롭게 확인해보세요!
+            </p>
 
             <div className="grid w-full gap-6 sm:grid-cols-2">
               {[
@@ -416,33 +462,38 @@ export default function Home() {
           </section>
 
           {/* Contact CTA */}
-          <div className="flex flex-col items-center gap-6">
-            <p className="text-amber-700 dark:text-zinc-500">
-              프로젝트 의뢰 및 문의
-            </p>
+          <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-2">
+              <h2 className="text-2xl font-bold text-amber-900 dark:text-zinc-100 sm:text-3xl">
+                프로젝트 의뢰 및 문의
+              </h2>
+              <div className="h-1 w-24 rounded-full bg-gradient-to-r from-amber-500 via-rose-500 to-violet-500 dark:from-violet-500 dark:to-cyan-500" />
+            </div>
             <a
               href="https://kmong.com/@%EC%98%A4%EB%A6%AC%EC%97%B0%EB%AA%BB%EB%AF%B8%EA%BE%B8%EB%9D%BC%EC%A7%80"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-full bg-gradient-to-r from-amber-500 via-rose-500 to-violet-500 px-8 py-4 font-semibold text-white shadow-lg shadow-rose-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-rose-500/30 dark:from-violet-600 dark:to-cyan-600 dark:shadow-violet-500/25 dark:hover:shadow-violet-500/30"
             >
-              <span className="relative z-10">문의하기</span>
+              <span className="relative z-10">크몽에서 문의하기</span>
               <div className="absolute inset-0 -z-0 bg-gradient-to-r from-violet-500 via-rose-500 to-amber-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-cyan-600 dark:to-violet-600" />
             </a>
+            <p className="text-center text-sm text-amber-700/80 dark:text-zinc-400">
+              비즈니스 문의는{" "}
+              <a
+                href="mailto:doworkslaves@gmail.com"
+                className="font-semibold text-amber-900 underline decoration-amber-500/50 underline-offset-2 transition-colors hover:text-rose-600 dark:text-zinc-200 dark:decoration-violet-500/50 dark:hover:text-cyan-400"
+              >
+                doworkslaves@gmail.com
+              </a>
+              로 연락주세요.
+              <br />
+              빠른 답변 드리겠습니다.
+            </p>
           </div>
 
           {/* Footer */}
           <footer className="flex flex-col items-center gap-4 pt-12">
-            <div className="flex gap-6">
-              {["GitHub", "Email", "Instagram"].map((item) => (
-                <span
-                  key={item}
-                  className="cursor-pointer text-sm text-amber-600/60 transition-colors hover:text-amber-900 dark:text-zinc-600 dark:hover:text-zinc-300"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
             <p className="text-sm text-amber-600/50 dark:text-zinc-700">
               © 2024 오리연못 미꾸라지. All rights reserved.
             </p>
