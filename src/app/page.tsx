@@ -298,23 +298,119 @@ export default function Home() {
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-amber-300 dark:to-zinc-700" />
             </div>
 
-            <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="glass glass-hover group relative flex h-64 cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl shadow-lg shadow-amber-500/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/20 dark:shadow-violet-500/5 dark:hover:shadow-violet-500/10"
+            <div className="grid w-full gap-6 sm:grid-cols-2">
+              {[
+                {
+                  title: "기업 홍보 사이트",
+                  description: "클라우드 인프라 서비스 마케팅 페이지",
+                  tags: ["SaaS", "B2B", "랜딩페이지"],
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
+                    </svg>
+                  ),
+                  color: "from-blue-500 to-cyan-500",
+                  iconBg: "bg-blue-100/90 dark:bg-blue-900/50",
+                  iconColor: "text-blue-600 dark:text-blue-400",
+                  url: "https://company-demo-three.vercel.app/",
+                  screenshot: "/screenshots/company.png",
+                },
+                {
+                  title: "쇼핑몰",
+                  description: "2026 다이어리 전문 이커머스 데모",
+                  tags: ["E-Commerce", "상품목록", "결제"],
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                  ),
+                  color: "from-violet-500 to-purple-500",
+                  iconBg: "bg-violet-100/90 dark:bg-violet-900/50",
+                  iconColor: "text-violet-600 dark:text-violet-400",
+                  url: "https://demo-shopping-mall.vercel.app/",
+                  screenshot: "/screenshots/shopping.png",
+                },
+                {
+                  title: "여행 이벤트 페이지",
+                  description: "2030 타겟 여행 프로모션 랜딩페이지",
+                  tags: ["이벤트", "프로모션", "여행"],
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                  ),
+                  color: "from-emerald-500 to-teal-500",
+                  iconBg: "bg-emerald-100/90 dark:bg-emerald-900/50",
+                  iconColor: "text-emerald-600 dark:text-emerald-400",
+                  url: "https://demo-event-page-ten.vercel.app/",
+                  screenshot: "/screenshots/travel.png",
+                },
+                {
+                  title: "Claude Skills Hub",
+                  description: "Claude AI 스킬 마켓플레이스 클론",
+                  tags: ["AI", "마켓플레이스", "SaaS"],
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                    </svg>
+                  ),
+                  color: "from-orange-500 to-rose-500",
+                  iconBg: "bg-orange-100/90 dark:bg-orange-900/50",
+                  iconColor: "text-orange-600 dark:text-orange-400",
+                  url: "https://claude-skills-clone.vercel.app/",
+                  screenshot: "/screenshots/claude.png",
+                },
+              ].map((demo) => (
+                <a
+                  key={demo.title}
+                  href={demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex min-h-[280px] flex-col gap-4 overflow-hidden rounded-2xl p-6 shadow-lg shadow-amber-500/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/20 dark:shadow-violet-500/5 dark:hover:shadow-violet-500/10"
                 >
-                  <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-amber-400 via-rose-400 to-violet-400 opacity-0 blur transition-opacity duration-500 group-hover:opacity-30 dark:from-violet-600 dark:via-cyan-600 dark:to-fuchsia-600 dark:group-hover:opacity-30" />
-                  <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 text-3xl transition-transform duration-500 group-hover:scale-110 dark:from-zinc-800/50 dark:to-zinc-900/50">
-                    {i === 1 ? "🎨" : i === 2 ? "💼" : "🚀"}
+                  {/* Background screenshot with blur */}
+                  <div
+                    className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${demo.screenshot})` }}
+                  />
+                  {/* Overlay for readability */}
+                  <div className="absolute inset-0 -z-10 bg-white/80 backdrop-blur-sm transition-all duration-500 group-hover:bg-white/70 dark:bg-black/70 dark:group-hover:bg-black/60" />
+
+                  {/* Gradient border on hover */}
+                  <div className={`absolute inset-0 -z-30 rounded-2xl bg-gradient-to-r ${demo.color} opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-40`} />
+
+                  {/* Header with icon */}
+                  <div className="flex items-start justify-between">
+                    <div className={`rounded-xl p-3 shadow-lg ${demo.iconBg}`}>
+                      <span className={demo.iconColor}>{demo.icon}</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-amber-600 opacity-0 transition-all duration-300 group-hover:opacity-100 dark:text-zinc-400">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
                   </div>
-                  <span className="text-lg font-medium text-amber-700 transition-colors group-hover:text-amber-900 dark:text-zinc-400 dark:group-hover:text-zinc-200">
-                    Coming Soon
-                  </span>
-                  <span className="text-sm text-amber-500 dark:text-zinc-600">
-                    데모 #{i}
-                  </span>
-                </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-xl font-bold text-amber-900 transition-colors group-hover:text-amber-700 dark:text-zinc-100 dark:group-hover:text-white">
+                      {demo.title}
+                    </h3>
+                    <p className="text-sm text-amber-800/80 dark:text-zinc-300">
+                      {demo.description}
+                    </p>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {demo.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-amber-700 shadow-sm dark:bg-zinc-800/80 dark:text-zinc-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </a>
               ))}
             </div>
           </section>
@@ -324,10 +420,15 @@ export default function Home() {
             <p className="text-amber-700 dark:text-zinc-500">
               프로젝트 의뢰 및 문의
             </p>
-            <button className="group relative overflow-hidden rounded-full bg-gradient-to-r from-amber-500 via-rose-500 to-violet-500 px-8 py-4 font-semibold text-white shadow-lg shadow-rose-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-rose-500/30 dark:from-violet-600 dark:to-cyan-600 dark:shadow-violet-500/25 dark:hover:shadow-violet-500/30">
+            <a
+              href="https://kmong.com/@%EC%98%A4%EB%A6%AC%EC%97%B0%EB%AA%BB%EB%AF%B8%EA%BE%B8%EB%9D%BC%EC%A7%80"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-amber-500 via-rose-500 to-violet-500 px-8 py-4 font-semibold text-white shadow-lg shadow-rose-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-rose-500/30 dark:from-violet-600 dark:to-cyan-600 dark:shadow-violet-500/25 dark:hover:shadow-violet-500/30"
+            >
               <span className="relative z-10">문의하기</span>
               <div className="absolute inset-0 -z-0 bg-gradient-to-r from-violet-500 via-rose-500 to-amber-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-cyan-600 dark:to-violet-600" />
-            </button>
+            </a>
           </div>
 
           {/* Footer */}
